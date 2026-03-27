@@ -1,0 +1,37 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=box, style="rounded,filled", fillcolor="#F9FCFF", color="#2F6FEB", fontname=Arial];
+
+  subgraph cluster_front {
+    label="Frontend";
+    color="#A8C8F0";
+    Home [label="HomePage"];
+    Dashboard [label="DashboardPage"];
+    Patients [label="PatientsPage"];
+    Doctors [label="DoctorsPage"];
+    Appointments [label="AppointmentsPage"];
+  }
+
+  subgraph cluster_back {
+    label="Backend";
+    color="#A8C8F0";
+    Auth [label="AuthController"];
+    PCtrl [label="PatientController"];
+    DCtrl [label="DoctorController"];
+    ACtrl [label="AppointmentController"];
+    Mid [label="Middlewares"];
+  }
+
+  DB [label="MongoDB", fillcolor="#D9ECFF"];
+
+  Home -> Auth;
+  Dashboard -> ACtrl;
+  Patients -> PCtrl;
+  Doctors -> DCtrl;
+  Appointments -> ACtrl;
+  Auth -> Mid;
+  PCtrl -> DB;
+  DCtrl -> DB;
+  ACtrl -> DB;
+}

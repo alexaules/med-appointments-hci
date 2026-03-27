@@ -1,0 +1,12 @@
+digraph G {
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=box, style="rounded,filled", fontname=Arial, fillcolor="#F9FCFF", color="#2F6FEB"];
+  User [label="Administrador / Gestor / Médico"];
+  System [label="Sistema de Gestión de Citas Médicas\n(Prototipo HCI)"];
+  Mongo [label="MongoDB"];
+  Github [label="Repositorio GitHub"];
+
+  User -> System [label="gestiona citas, pacientes y médicos"];
+  System -> Mongo [label="lee / escribe datos"];
+  System -> Github [label="almacena código y documentación"];
+}

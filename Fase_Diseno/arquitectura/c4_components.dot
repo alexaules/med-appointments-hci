@@ -1,0 +1,20 @@
+digraph G {
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=box, style="rounded,filled", fontname=Arial, fillcolor="#F9FCFF", color="#2F6FEB"];
+  Router [label="Routes"];
+  Controllers [label="Controllers"];
+  Models [label="Mongoose Models"];
+  Middlewares [label="Middlewares"];
+  Validators [label="Express Validator"];
+  UI [label="Pages + Components"];
+  Services [label="API Service"];
+  DB [label="MongoDB"];
+
+  UI -> Services [label="consume"];
+  Services -> Router [label="HTTP"];
+  Router -> Middlewares [label="protección"];
+  Router -> Validators [label="validación"];
+  Router -> Controllers [label="delegación"];
+  Controllers -> Models [label="operaciones"];
+  Models -> DB [label="persistencia"];
+}

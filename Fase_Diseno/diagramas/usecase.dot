@@ -1,0 +1,22 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=ellipse, fontname=Arial, style=filled, fillcolor="#EAF4FF", color="#2F6FEB"];
+  edge [fontname=Arial, color="#6B88AA"];
+
+  admin [shape=box, style="rounded,filled", fillcolor="#D9ECFF", label="Administrador"];
+  manager [shape=box, style="rounded,filled", fillcolor="#D9ECFF", label="Gestor"];
+  doctor [shape=box, style="rounded,filled", fillcolor="#D9ECFF", label="Médico"];
+
+  uc1 [label="Registrar paciente"];
+  uc2 [label="Gestionar médicos"];
+  uc3 [label="Programar cita"];
+  uc4 [label="Consultar historial"];
+  uc5 [label="Actualizar cita"];
+  uc6 [label="Autenticarse"];
+  uc7 [label="Generar resumen"];
+
+  admin -> uc1; admin -> uc2; admin -> uc3; admin -> uc4; admin -> uc5; admin -> uc6; admin -> uc7;
+  manager -> uc1; manager -> uc2; manager -> uc3; manager -> uc4; manager -> uc5; manager -> uc6;
+  doctor -> uc3; doctor -> uc4; doctor -> uc5; doctor -> uc6;
+}

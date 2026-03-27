@@ -1,0 +1,15 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=box, style="rounded,filled", fontname=Arial, fillcolor="#F9FCFF", color="#2F6FEB"];
+  Browser [label="Navegador web"];
+  Front [label="Frontend React\nVite SPA"];
+  API [label="Backend Node.js + Express\nAPI REST"];
+  DB [label="MongoDB"];
+  Docs [label="Documentación\nREADME + DOCX + UML"];
+
+  Browser -> Front [label="interfaz"];
+  Front -> API [label="HTTP / JSON"];
+  API -> DB [label="Mongoose"];
+  API -> Docs [label="consulta técnica"];
+}

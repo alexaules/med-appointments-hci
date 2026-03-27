@@ -1,0 +1,18 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=box, style="rounded,filled", fillcolor="#F6FAFF", color="#2F6FEB", fontname=Arial];
+
+  User [label="Usuario"];
+  UI [label="Frontend React"];
+  API [label="Backend Express"];
+  DB [label="MongoDB"];
+
+  User -> UI [label="1. Completa formulario"];
+  UI -> API [label="2. POST /appointments"];
+  API -> API [label="3. Valida datos y token"];
+  API -> DB [label="4. Guarda cita"];
+  DB -> API [label="5. Respuesta OK"];
+  API -> UI [label="6. JSON con cita creada"];
+  UI -> User [label="7. Mensaje de éxito"];
+}

@@ -1,0 +1,18 @@
+digraph G {
+  rankdir=TB;
+  graph [fontname=Arial, bgcolor=white];
+  node [shape=record, fontname=Arial, style=filled, fillcolor="#F9FCFF", color="#2F6FEB"];
+
+  User [label="{User|+id\l+name\l+email\l+password\l+role\l|+login()\l+register()\l}"];
+  Patient [label="{Patient|+id\l+fullName\l+birthDate\l+address\l+phone\l+sex\l+email\l|+create()\l+update()\l}"];
+  Doctor [label="{Doctor|+id\l+fullName\l+specialty\l+phone\l+email\l+officeHours\l|+create()\l+update()\l}"];
+  Appointment [label="{Appointment|+id\l+date\l+time\l+status\l+reason\l+diagnosis\l+treatment\l|+schedule()\l+cancel()\l+complete()\l}"];
+  Api [label="{REST API|+authRoutes\l+patientRoutes\l+doctorRoutes\l+appointmentRoutes\l|+validate()\l+respond()\l}"];
+
+  User -> Api [label=" autentica "];
+  Api -> Patient [label=" CRUD "];
+  Api -> Doctor [label=" CRUD "];
+  Api -> Appointment [label=" CRUD "];
+  Appointment -> Patient [label=" pertenece a "];
+  Appointment -> Doctor [label=" asignada a "];
+}
